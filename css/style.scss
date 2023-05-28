@@ -1,0 +1,235 @@
+@font-face {
+    font-family: 'Futura';
+    src: url(../font/Futura.otf);
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url(../font/HelveticaNeue-Medium.otf);
+}
+
+* {
+    box-sizing: border-box
+}
+
+:root {
+    font-size: 10px;
+}
+
+body,
+main {
+    margin: 0;
+    padding: 0;
+    background: #111111;
+    position: relative;
+    color: #fff;
+}
+
+body {
+    // height: 3000vh;
+}
+
+.inner_wrapper {
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+#section_1 {
+    padding-top: 20rem;
+    color: #fff;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 70vh;
+
+    @media (max-width: 600px) {
+        padding-bottom: 10vh;
+
+    }
+    .inner_wrapper {
+        position: relative;
+        z-index: 2;
+        pointer-events: none;
+    }
+
+    h3 {
+        font-size: calc(2rem + .5vw);
+        margin: 0;
+        padding: 0;
+        margin-bottom: 1rem;
+    }
+
+    .large_text_heading {
+        font-family: 'Futura';
+        margin: 0;
+        padding: 0;
+
+        span {
+            line-height: 15vw;
+            font-size: 15vw;
+            display: block;
+        }
+    }
+
+    .text_helper {
+        font-size: calc(1.2rem + .5vw);
+        margin: 0;
+        padding: 0;
+        font-family: cursive;
+    }
+
+    .graphic_wrapper {
+        position: absolute;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+
+        .video_wrapper {
+            position: sticky;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100vh;
+
+
+
+            display: block;
+            margin-top: 90vh;
+
+            @media (max-width: 600px) {
+                height: auto;
+
+            }
+
+            opacity: 0;
+            animation: 1s video_animate forwards;
+
+            &::after {
+                content: '';
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+                pointer-events: none;
+
+                @media (max-width: 600px) {
+                    display: none;
+
+                }
+            }
+
+            @keyframes video_animate {
+                0% {
+                    margin-top: 90vh;
+                    opacity: 0;
+
+
+                }
+
+                100% {
+                    margin-top: 78vh;
+                    opacity: 1;
+
+
+                }
+            }
+
+            video {
+                width: 100%;
+                // height: 100vh;
+                object-fit: cover;
+                height: 100%;
+
+            }
+        }
+
+
+
+
+    }
+
+    .video_control_btn {
+        position: sticky;
+        z-index: 10;
+        background: #111111;
+        bottom: 50px;
+        left: calc(100% - 150px);
+        border-radius: 80px;
+        display: flex;
+        color: #fff;
+        border: none;
+        margin-top: -100px;
+        outline: none;
+        box-shadow: none;
+        cursor: pointer;
+        font-size: 1.6rem;
+        align-items: center;
+        pointer-events: visible;
+        transition: .3s;
+        @media (max-width: 600px) {
+            margin-top: -50px;
+
+        }
+        &:hover {
+            background: #707070;
+        }
+
+    }
+
+
+}
+
+#section_2 {
+    font-size: 4vw;
+    font-family: 'Helvetica';
+    line-height: 4.6vw;
+}
+
+#section_3,
+#section_4,
+#section_5{
+    margin-bottom: 20rem;
+    @media (max-width: 1000px){
+        margin-bottom: 15rem;
+
+    }
+    @media (max-width: 600px){
+        margin-bottom: 6rem;
+    }
+    .inner_content{
+        h2{
+            font-size: 2.5vw;
+        }
+        a{
+            font-size: 1.5rem;
+            @media (max-width: 600px) {
+            font-size: 1rem;
+                
+            }
+            color: #fff;
+        }
+    }
+    .img_wrapper{
+        img{
+            width: 100%;
+        }
+    }
+}
+
+#section_6{
+    .card{
+        background: transparent;
+        .card-title{
+            font-size: 2vw;
+            @media (max-width: 600px){
+                font-size: 2.5vw;
+
+            }
+        }
+        p{
+            font-size: calc(1rem + .5vw);
+        }
+    }
+}
